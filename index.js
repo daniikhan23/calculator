@@ -35,9 +35,9 @@ function divide(a, b) {
 //   - operator
 //   - another number
 
-let operator = prompt("Operator?");
-let firstNum = Number(prompt("First number?"));
-let secondNum = Number(prompt("Second number?"));
+// let operator = prompt("Operator?");
+// let firstNum = Number(prompt("First number?"));
+// let secondNum = Number(prompt("Second number?"));
 
 // 3. function operate():
 //   - parameters (operator, num1, num2)
@@ -55,7 +55,7 @@ function operate(operator, firstNum, secondNum) {
   }
 }
 
-console.log(operate(operator, firstNum, secondNum));
+// console.log(operate(operator, firstNum, secondNum));
 
 // 4. HTML:
 //   - basic html
