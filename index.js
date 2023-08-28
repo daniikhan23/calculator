@@ -13,31 +13,49 @@ function subtract(a, b) {
   return a - b;
 }
 
-console.log(subtract(10, 5));
-console.log(subtract(9, 1));
+// console.log(subtract(10, 5));
+// console.log(subtract(9, 1));
 
 function multiply(a, b) {
   return a * b;
 }
 
-console.log(multiply(10, 5));
-console.log(multiply(9, 9));
+// console.log(multiply(10, 5));
+// console.log(multiply(9, 9));
 
 function divide(a, b) {
   return a / b;
 }
 
-console.log(divide(10, 5));
-console.log(divide(9, 2));
+// console.log(divide(10, 5));
+// console.log(divide(9, 2));
 
 // 2. Variables (3) in calc ops:
 //   - number
 //   - operator
 //   - another number
 
+let operator = prompt("Operator?");
+let firstNum = Number(prompt("First number?"));
+let secondNum = Number(prompt("Second number?"));
+
 // 3. function operate():
 //   - parameters (operator, num1, num2)
 //   - calls above basic function to calculate
+
+function operate(operator, firstNum, secondNum) {
+  if (operator === "+") {
+    return add(firstNum, secondNum);
+  } else if (operator === "-") {
+    return subtract(firstNum, secondNum);
+  } else if (operator === "*") {
+    return multiply(firstNum, secondNum);
+  } else if (operator === "/") {
+    return divide(firstNum, secondNum);
+  }
+}
+
+console.log(operate(operator, firstNum, secondNum));
 
 // 4. HTML:
 //   - basic html
