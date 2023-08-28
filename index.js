@@ -35,9 +35,9 @@ function divide(a, b) {
 //   - operator
 //   - another number
 
-// let operator = prompt("Operator?");
-// let firstNum = Number(prompt("First number?"));
-// let secondNum = Number(prompt("Second number?"));
+let operator = prompt("Operator?");
+let firstNum = Number(prompt("First number?"));
+let secondNum = Number(prompt("Second number?"));
 
 // 3. function operate():
 //   - parameters (operator, num1, num2)
@@ -65,9 +65,25 @@ function operate(operator, firstNum, secondNum) {
 //   - display for calc
 //   - button for "clear"
 
+//DONE
+
 // 5. display function:
 //   - function that updates the display
 //   - display value stored in variable for use in next step
+
+const displayResult = document.querySelector(".display-section");
+displayResult.textContent = 0;
+
+function display (operator, firstNum, secondNum) {
+  let result = operate(operator, firstNum, secondNum);
+  console.log(result);
+  if (result === undefined) {
+    result = 0;
+  }
+  displayResult.textContent = result;
+}
+
+display(operator, firstNum, secondNum);
 
 // 6. make calc work:
 //   - store first and second number as inputs
