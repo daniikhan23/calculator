@@ -5,7 +5,30 @@
 //   - multiply
 //   - divide
 
+function add(a, b) {
+  return a + b;
+} 
 
+function subtract(a, b) {
+  return a - b;
+}
+
+console.log(subtract(10, 5));
+console.log(subtract(9, 1));
+
+function multiply(a, b) {
+  return a * b;
+}
+
+console.log(multiply(10, 5));
+console.log(multiply(9, 9));
+
+function divide(a, b) {
+  return a / b;
+}
+
+console.log(divide(10, 5));
+console.log(divide(9, 2));
 
 // 2. Variables (3) in calc ops:
 //   - number
