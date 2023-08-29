@@ -21,10 +21,18 @@ let firstNum;
 let secondNum;
 let displayArray = [];
 let result;
+let displayText;
 
 // delete and clear buttons
 const btnDel = document.querySelector(".btn-del");
 const btnClear = document.querySelector(".btn-ac");
+
+btnDel.addEventListener("click", () => {
+  displayArray.pop();
+  displayText = displayResult.textContent;
+  displayText = displayText.substring(0, displayText.length - 1);
+  displayResult.textContent = displayText;
+})
 
 btnClear.addEventListener("click", () => {
   displayResult.textContent = "";
