@@ -80,6 +80,14 @@ opEqual.addEventListener("click", () => {
 });
 
 // number inputs 
+
+const decPt = document.querySelector(".btn-decimal");
+decPt.addEventListener("click", () => {
+  displayArray.push(".");
+  displayResult.textContent += ".";
+  console.log(displayResult.textContent);
+});
+
 const numZero = document.querySelector(".btn-zero");
 numZero.addEventListener("click", () => {
   displayArray.push("0");
@@ -165,12 +173,8 @@ function operate(operator, firstNum, secondNum) {
   }
 }
 
-// 5. display function:
-//   - function that updates the display
-//   - display value stored in variable for use in next step
-const displayResult = document.querySelector(".display-section");
-
-function display (displayArray) {
+// function to traverse array of nums, initialise variables calc result
+function calcResult(displayArray) {
   console.log(displayArray);
   let arrLength = displayArray.length;
   let count = 0;
@@ -195,10 +199,37 @@ function display (displayArray) {
   console.log(`Num2: ${secondNum}`);
 
   result = operate(operator, firstNum, secondNum);
+  console.log(result);
+
+  result = result.toFixed(2);
+
+  return result;
+}
+
+// 5. display function:
+//   - function that updates the display
+//   - display value stored in variable for use in next step
+const displayResult = document.querySelector(".display-section");
+
+function display (displayArray) {
+  result = calcResult(displayArray);
+
   if (result === undefined) {
     result = 0;
+  } else if (result == Infinity) {
+    displayResult.textContent = "Infinity - don't divide by a zero bruv";
+    result = 0;
   }
+
   displayResult.textContent = result;
+  firstNum = result;
+
+  displayArray.splice(0, displayArray.length);
+  console.log(`After emptying: ${displayArray}`);
+  
+  displayArray.push(result);
+  console.log(`Pushing last result: ${displayArray}`);
+  
   console.log(`result: ${displayResult.textContent}`);
 }
 
