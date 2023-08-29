@@ -36,9 +36,9 @@ opMul.addEventListener("click", () => {
 });
 
 opSub.addEventListener("click", () => {
-  operator = "-";
+  displayArray.push("-");
   displayResult.textContent += "-";
-  console.log(`operator: ${operator}`);
+  console.log(displayResult.textContent);
 });
 
 opAdd.addEventListener("click", () => {
@@ -155,13 +155,11 @@ function display (displayArray) {
   let count = 0;
   for (let i = 0; i < arrLength; i++) {
     console.log(`Current index: ${i}`);
-    if (displayArray[i] === '+') {
+    if (displayArray[i] === '+' || displayArray[i] === '-') {
       console.log(displayArray[i]);
       count = i;
     }
   }
-
-
 
   console.log(`Count: ${count}`);
 
