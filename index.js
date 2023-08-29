@@ -1,47 +1,70 @@
-// Plan
-// 1. Add basic functions:
-//   - add
-//   - subtract
-//   - multiply
-//   - divide
-
+// calculation functions
 function add(a, b) {
-  return a + b;
+  return Number(a) + Number(b);
 } 
 
 function subtract(a, b) {
   return a - b;
 }
 
-// console.log(subtract(10, 5));
-// console.log(subtract(9, 1));
-
 function multiply(a, b) {
   return a * b;
 }
-
-// console.log(multiply(10, 5));
-// console.log(multiply(9, 9));
 
 function divide(a, b) {
   return a / b;
 }
 
-// console.log(divide(10, 5));
-// console.log(divide(9, 2));
+// operators
+const opDiv = document.querySelector(".btn-divide");
+const opMul = document.querySelector(".btn-multiply");
+const opSub = document.querySelector(".btn-sub");
+const opAdd = document.querySelector(".btn-add");
+const opEqual = document.querySelector(".btn-equal");
+let operator;
 
-// 2. Variables (3) in calc ops:
-//   - number
-//   - operator
-//   - another number
+opDiv.addEventListener("click", () => {
+  operator = "/";
+  displayResult.textContent += "/";
+  console.log(`operator: ${operator}`);
+});
 
-let operator = prompt("Operator?");
-let firstNum = Number(prompt("First number?"));
-let secondNum = Number(prompt("Second number?"));
+opMul.addEventListener("click", () => {
+  operator = "*";
+  displayResult.textContent += "*";
+  console.log(`operator: ${operator}`);
+});
 
-// 3. function operate():
-//   - parameters (operator, num1, num2)
-//   - calls above basic function to calculate
+opSub.addEventListener("click", () => {
+  operator = "-";
+  displayResult.textContent += "-";
+  console.log(`operator: ${operator}`);
+});
+
+opAdd.addEventListener("click", () => {
+  displayArray.push("+");
+  displayResult.textContent += "+";
+  console.log(displayResult.textContent);
+});
+
+opEqual.addEventListener("click", () => {
+  display(displayArray);
+});
+
+// number inputs 
+
+let firstNum;
+let secondNum;
+let displayArray = [];
+
+const numOne = document.querySelector(".btn-one");
+numOne.addEventListener("click", () => {
+  displayArray.push("1");
+  displayResult.textContent += "1";
+  console.log(displayResult.textContent);
+});
+
+// function operate():
 
 function operate(operator, firstNum, secondNum) {
   if (operator === "+") {
@@ -55,35 +78,45 @@ function operate(operator, firstNum, secondNum) {
   }
 }
 
-// console.log(operate(operator, firstNum, secondNum));
-
-// 4. HTML:
-//   - basic html
-//   - buttons for each digit
-//   - buttons for each function
-//   - button for equal sign
-//   - display for calc
-//   - button for "clear"
-
-//DONE
-
 // 5. display function:
 //   - function that updates the display
 //   - display value stored in variable for use in next step
 
 const displayResult = document.querySelector(".display-section");
-displayResult.textContent = 0;
 
-function display (operator, firstNum, secondNum) {
+function display (displayArray) {
+  console.log(displayArray);
+  let arrLength = displayArray.length;
+  let count = 0;
+  for (let i = 0; i < arrLength; i++) {
+    console.log(`Current index: ${i}`);
+    if (displayArray[i] === '+') {
+      console.log(displayArray[i]);
+      count = i;
+    }
+  }
+
+
+
+  console.log(`Count: ${count}`);
+
+  firstNum = Number(displayArray.slice(0, count).join(''));
+  console.log(`Num1: ${firstNum}`);
+
+  operator = displayArray[count];
+  console.log(`Operator: ${operator}`);
+
+  secondNum = Number(displayArray.slice(count + 1).join(''));
+  console.log(`Num2: ${secondNum}`);
+
   let result = operate(operator, firstNum, secondNum);
-  console.log(result);
   if (result === undefined) {
     result = 0;
   }
   displayResult.textContent = result;
+  console.log(`result: ${displayResult.textContent}`);
 }
 
-display(operator, firstNum, secondNum);
 
 // 6. make calc work:
 //   - store first and second number as inputs
