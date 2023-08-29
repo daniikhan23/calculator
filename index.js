@@ -15,13 +15,33 @@ function divide(a, b) {
   return a / b;
 }
 
+// variable declarations
+let operator;
+let firstNum;
+let secondNum;
+let displayArray = [];
+let result;
+
+// delete and clear buttons
+const btnDel = document.querySelector(".btn-del");
+const btnClear = document.querySelector(".btn-ac");
+
+btnClear.addEventListener("click", () => {
+  displayResult.textContent = "";
+  displayArray = [];
+  firstNum = 0;
+  operator = "";
+  secondNum = 0;
+  console.clear();
+})
+
 // operators
 const opDiv = document.querySelector(".btn-divide");
 const opMul = document.querySelector(".btn-multiply");
 const opSub = document.querySelector(".btn-sub");
 const opAdd = document.querySelector(".btn-add");
 const opEqual = document.querySelector(".btn-equal");
-let operator;
+
 
 opDiv.addEventListener("click", () => {
   displayArray.push("/");
@@ -52,11 +72,6 @@ opEqual.addEventListener("click", () => {
 });
 
 // number inputs 
-
-let firstNum;
-let secondNum;
-let displayArray = [];
-
 const numZero = document.querySelector(".btn-zero");
 numZero.addEventListener("click", () => {
   displayArray.push("0");
@@ -130,7 +145,6 @@ numNine.addEventListener("click", () => {
 
 
 // function operate():
-
 function operate(operator, firstNum, secondNum) {
   if (operator === "+") {
     return add(firstNum, secondNum);
@@ -146,7 +160,6 @@ function operate(operator, firstNum, secondNum) {
 // 5. display function:
 //   - function that updates the display
 //   - display value stored in variable for use in next step
-
 const displayResult = document.querySelector(".display-section");
 
 function display (displayArray) {
@@ -173,7 +186,7 @@ function display (displayArray) {
   secondNum = Number(displayArray.slice(count + 1).join(''));
   console.log(`Num2: ${secondNum}`);
 
-  let result = operate(operator, firstNum, secondNum);
+  result = operate(operator, firstNum, secondNum);
   if (result === undefined) {
     result = 0;
   }
