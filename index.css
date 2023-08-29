@@ -78,3 +78,70 @@ button:hover {
   transition: all 0.3s ease-in;
 }
 
+body {
+  background-color: wheat;
+}
+
+.main {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 1rem;
+  margin-top: 5rem;
+}
+
+.main .container {
+  border: 2px solid #202020;
+  border-radius: 1rem;
+  background-color: #202020;
+}
+
+.main .container .display-section {
+  
+  padding-top: 12rem;
+  padding-bottom: 2rem;
+  padding-left: 4rem;
+  padding-right: 4rem;
+  margin-bottom: 2rem;
+  font-size: 3rem;
+  font-family: 'Black Ops One', cursive;
+  color: white;
+  background-color: #202020;
+}
+
+.main .container .button-containers {
+  background-color: #282828;
+  padding: 5rem;
+  border: 2px solid #252525;
+  border-top-left-radius: 10%;
+  border-top-right-radius: 10%;
+}
+
+.main .container .button-containers .input-container button {
+  color: white;
+  background-color: #252525;
+  border: 2px solid #252525;
+  text-align: center;
+  font-size: 2rem;
+  font-family: 'Black Ops One', cursive;
+  padding: 2rem;
+  margin: 0.5rem;
+  width: 8rem;
+  border-radius: 1rem;
+}
+
+.main .container .button-containers .input-container .btn-del,
+.main .container .button-containers .input-container .btn-ac,
+.main .container .button-containers .input-container .btn-p 
+{
+  color: #61F4C8;
+} 
+
+.main .container .button-containers .input-container .btn-divide,
+.main .container .button-containers .input-container .btn-multiply,
+.main .container .button-containers .input-container .btn-add,
+.main .container .button-containers .input-container .btn-sub,
+.main .container .button-containers .input-container .btn-equal
+{
+  color: #C70039;
+}   
