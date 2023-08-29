@@ -53,13 +53,13 @@ const opEqual = document.querySelector(".btn-equal");
 
 opDiv.addEventListener("click", () => {
   displayArray.push("/");
-  displayResult.textContent += "/";
+  displayResult.textContent += "÷";
   console.log(displayResult.textContent);
 });
 
 opMul.addEventListener("click", () => {
   displayArray.push("*");
-  displayResult.textContent += "*";
+  displayResult.textContent += "x";
   console.log(displayResult.textContent);
 });
 

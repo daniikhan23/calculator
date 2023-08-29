@@ -1,2 +1,2 @@
 # calculator
-An easy to user Calculator on the web!
+An easy to use Calculator on the web!
