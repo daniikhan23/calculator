@@ -24,9 +24,9 @@ const opEqual = document.querySelector(".btn-equal");
 let operator;
 
 opDiv.addEventListener("click", () => {
-  operator = "/";
+  displayArray.push("/");
   displayResult.textContent += "/";
-  console.log(`operator: ${operator}`);
+  console.log(displayResult.textContent);
 });
 
 opMul.addEventListener("click", () => {
@@ -156,7 +156,7 @@ function display (displayArray) {
   for (let i = 0; i < arrLength; i++) {
     console.log(`Current index: ${i}`);
     if (displayArray[i] === '+' || displayArray[i] === '-' ||
-    displayArray[i] === '*') {
+    displayArray[i] === '*' || displayArray[i] === '/') {
       console.log(displayArray[i]);
       count = i;
     }
