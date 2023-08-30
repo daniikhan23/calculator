@@ -90,13 +90,6 @@ changeCol.addEventListener("click", () => {
   }
 });
 
-//check decimal 
-function hasDecimal(result) {
-  if (Math.floor(result) !== result) {
-    result = result.toFixed(1);
-  }
-}
-
 // calculation functions
 function add(a, b) {
   return Number(a) + Number(b);
@@ -114,6 +107,7 @@ function divide(a, b) {
 // delete and clear buttons
 btnDel.addEventListener("click", () => {
   displayArray.pop();
+  console.log(displayArray);
   displayText = displayResult.textContent;
   displayText = displayText.substring(0, displayText.length - 1);
   displayResult.textContent = displayText;
@@ -286,6 +280,13 @@ function operate(operator, firstNum, secondNum) {
   }
 }
 
+//check decimal 
+// function hasDecimal(result) {
+//   if (Math.floor(result) !== result) {
+//     result = result.toFixed(1);
+//   }
+// }
+
 // function to traverse array of nums, initialise variables calc result
 function calcResult(displayArray) {
   console.log(displayArray);
@@ -314,7 +315,7 @@ function calcResult(displayArray) {
   result = operate(operator, firstNum, secondNum);
   console.log(result);
 
-  hasDecimal(result);
+  result = result.toFixed(1);
 
   return result;
 }
@@ -322,9 +323,8 @@ function calcResult(displayArray) {
 // 5. display function:
 //   - function that updates the display
 //   - display value stored in variable for use in next step
-function display (displayArray) {
-  result = calcResult(displayArray);
-
+function display (arr) {
+  result = calcResult(arr);
   if (result === undefined) {
     result = 0;
   } else if (result == Infinity) {
@@ -332,15 +332,8 @@ function display (displayArray) {
     result = 0;
   } else {
     displayResult.textContent = result;
-    firstNum = result;
+    displayArray = result.split("");
   }
-  displayArray.splice(0, displayArray.length);
-  console.log(`After emptying: ${displayArray}`);
-  
-  displayArray.push(result);
-  console.log(`Pushing last result: ${displayArray}`);
-  
-  console.log(`result: ${displayResult.textContent}`);
 }
 
 // 7. potential bugs to fix:
