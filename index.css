@@ -157,3 +157,15 @@ body {
 {
   color: #C70039;
 }   
+
+.main .container .button-containers .input-container .row-five .btn-col {
+  background-image: url(assets/circle-half-stroke-solid.svg);
+  background-repeat: no-repeat;
+  background-position: center;
+  height: 6rem;
+  background-color: white;
+}
+
+.main .container .button-containers .input-container .row-five .btn-col:hover {
+  background-color: wheat;
+}

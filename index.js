@@ -252,7 +252,7 @@ function calcResult(displayArray) {
   result = operate(operator, firstNum, secondNum);
   console.log(result);
 
-  result = result.toFixed(2);
+  result = result.toFixed(1);
 
   return result;
 }
@@ -285,6 +285,64 @@ function display (displayArray) {
   console.log(`result: ${displayResult.textContent}`);
 }
 
+const changeCol = document.querySelector(".btn-col");
+const buttons = document.querySelectorAll('.btn');
+let mode = "dark";
+
+changeCol.addEventListener("click", () => {
+  const buttons = document.querySelectorAll(".btn");
+  const container = document.querySelector(".container");
+  const displaySection = document.querySelector(".display-section");
+  const buttonContainers = document.querySelector(".button-containers");
+
+  if (mode === 'dark') {
+    mode = 'light';
+    buttons.forEach(button => {
+      button.style.backgroundColor = 'White';
+      button.style.color = 'Black';
+      button.style.borderColor = '#fcfcfc';
+      btnDel.style.color = '#61F4C8';
+      btnClear.style.color = '#61F4C8';
+      opPercent.style.color = '#61F4C8';
+      opDiv.style.color = '#C70039';
+      opMul.style.color = '#C70039';
+      opSub.style.color = '#C70039';
+      opAdd.style.color = '#C70039';
+      opEqual.style.color = '#C70039';
+      changeCol.style.backgroundColor = '#2d2d2e';
+    });
+    container.style.backgroundColor = 'White';
+    container.style.borderColor = 'White';
+    displaySection.style.backgroundColor = 'White';
+    displaySection.style.color = 'Black';
+    buttonContainers.style.backgroundColor = '#ebedf0';
+    buttonContainers.style.borderColor = '#ebedf0';
+    document.body.style.backgroundColor = '#2d2d2e';
+  } else {
+    mode = 'dark';
+    buttons.forEach(button => {
+      button.style.backgroundColor = '#252525';
+      button.style.color = 'White';
+      button.style.borderColor = '#252525';
+      btnDel.style.color = '#61F4C8';
+      btnClear.style.color = '#61F4C8';
+      opPercent.style.color = '#61F4C8';
+      opDiv.style.color = '#C70039';
+      opMul.style.color = '#C70039';
+      opSub.style.color = '#C70039';
+      opAdd.style.color = '#C70039';
+      opEqual.style.color = '#C70039';
+      changeCol.style.backgroundColor = 'White';
+    });
+    container.style.backgroundColor = '#202020';
+    container.style.borderColor = '#202020';
+    displaySection.style.backgroundColor = '#202020';
+    displaySection.style.color = 'White';
+    buttonContainers.style.backgroundColor = '#282828';
+    buttonContainers.style.borderColor = '#252525';
+    document.body.style.backgroundColor = 'Wheat';
+  }
+});
 
 // 6. make calc work:
 //   - store first and second number as inputs
@@ -304,6 +362,5 @@ function display (displayArray) {
 
 // 8. Extra creds:
 //   - allow users to add floating point numbers but make sure only one decimal
-//   - make it look nice, sexy css, bootstrap etc
 //   - add "backspace" buttons
 //   - add keyboard support
