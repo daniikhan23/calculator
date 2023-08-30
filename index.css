@@ -87,13 +87,14 @@ body {
   justify-content: center;
   align-items: center;
   padding: 1rem;
-  margin-top: 5rem;
+  margin-top: 8rem;
 }
 
 .main .container {
   border: 2px solid #202020;
-  border-radius: 1rem;
+  border-radius: 8px;
   background-color: #202020;
+  box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 }
 
 .main .container .display-section {
@@ -128,6 +129,17 @@ body {
   margin: 0.5rem;
   width: 8rem;
   border-radius: 1rem;
+}
+
+.main .container .button-containers .input-container button:hover {
+  background-color: black;
+}
+
+.main .container .button-containers .input-container button:active {
+  background-color: black;
+  box-shadow: 0 5px #666;
+  transform: translateY(4px);
+  transition-duration: 10ms;
 }
 
 .main .container .button-containers .input-container .btn-del,
