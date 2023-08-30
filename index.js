@@ -49,7 +49,16 @@ const opMul = document.querySelector(".btn-multiply");
 const opSub = document.querySelector(".btn-sub");
 const opAdd = document.querySelector(".btn-add");
 const opEqual = document.querySelector(".btn-equal");
+const opPercent = document.querySelector(".btn-percent");
 
+opPercent.addEventListener("click", () => {
+  let percentage = Number(displayArray.slice(0).join('')) / 100;
+  percentage = percentage.toFixed(2);
+  displayArray.splice(0, displayArray.length);
+  displayArray.push(percentage);
+  firstNum = percentage;
+  displayResult.textContent = percentage;
+})
 
 opDiv.addEventListener("click", () => {
   displayArray.push("/");
